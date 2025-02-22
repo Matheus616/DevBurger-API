@@ -1,6 +1,7 @@
-import express from 'express'
-import routes  from './routes'
+import express from 'express';
+import routes  from './routes';
 
+import './database/migrations/index';
 class App {
     constructor() {
         this.app = express();
