@@ -1,7 +1,7 @@
-import  Sequelize  from "sequelize";
-import User from '../../app/models/user.js';
-
+import Sequelize from "sequelize";
 import configDatabase from '../../config/database.js';
+import User from "../../app/models/user.js";
+
 
 
 const models = [User];
@@ -12,7 +12,7 @@ class Database {
     };
 
     init() {
-        this.connection = new Sequelize( configDatabase );
+        this.connection = new Sequelize(configDatabase);
         models.map((model) => model.init(this.connection));
     }
 }
