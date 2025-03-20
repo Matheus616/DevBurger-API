@@ -1,6 +1,4 @@
-const { underscoredIf } = require("sequelize/lib/utils");
-
-module.exports = {
+export default  {
     dialect: 'postgres',
     host: 'localhost',
     port: 5432,

@@ -1,7 +1,10 @@
+/* eslint-disable no-undef */
 import express from 'express';
-import routes  from './routes';
+import { resolve } from 'node:path';
 
-import './database/migrations/index.js';
+import routes  from './routes.js';
+
+import './database/index.js';
 class App {
     constructor() {
         this.app = express();
@@ -11,6 +14,10 @@ class App {
 
     middlewares() {
         this.app.use(express.json());
+        this.app.use(
+            './product-file',
+        express.static(resolve(__dirname, '..', 'uploads')),
+    );
     }
 
     routes() {
